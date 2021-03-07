@@ -10,6 +10,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.junit.Assert.assertTrue;
 
 
 public class UserCreation
@@ -25,6 +29,22 @@ public class UserCreation
     public UserCreation(WebDriver driver)
     {
         this.driver=driver;
+    }
+
+
+    public void FormTitle()
+    //Explicitly waits for the title of UserCreation page
+    {
+        try {
+            Thread.sleep(2000);
+        }
+        catch(InterruptedException ie){
+        }
+        //WebDriverWait wait = new WebDriverWait(driver, 5);
+        //wait.until(ExpectedConditions.titleIs("This is a Liferay Forms"));
+        String title = driver.getTitle();
+        assertTrue("Title is: This is a Liferay Forms",(title == "This is a Liferay Forms"));
+
     }
 
 
