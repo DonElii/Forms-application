@@ -1,6 +1,6 @@
 /*
- * This class stores all the locators and methods of submission page once UserCreation completed.
- * @url: https://forms.liferay.com/web/forms/shared/-/form/122548
+ * This class stores all the locators and methods of submission page once UserCreation Page submitted.
+ * @url - after submitting successfully the Form: https://forms.liferay.com/web/forms/shared/-/form/122548
  *
  */
 
@@ -13,33 +13,46 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.junit.Assert.assertTrue;
 
-public class UserCreation_Submitted
+
+public class UserCreation_Submission
 {
 
     WebDriver driver;
 
-    By username = By.xpath("//input[@class='ddm-field-text form-control']");
-    By birthdate = By.xpath("//div//input[@class='form-control input-group-inset input-group-inset-after']");
-    By comment = By.xpath("//textarea[@type='text']");
-    By submitButton = By.xpath("//button[@type='submit']");
+    By submission_text = By.xpath("//h1[@class='ddm-form-name']");
+    By submission_description = By.xpath("//h5[@class='ddm-form-description']");
 
-    public UserCreation_Submitted(WebDriver driver)
+
+    public UserCreation_Submission(WebDriver driver)
     {
         this.driver=driver;
     }
 
-    public void SubmittedTitle()
-            //Explicitly waits for the title of Submission page
+    public void SubmissionTitle()
+        //Explicitly waits for the title of Submission page
     {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.titleIs("Form - Forms"));
     }
 
-    public void 
+    public void SubmissionText(String input_text)
+        //captures the text of Submission
+        //asserting if the text = parameter (input_text)
+    {
+        String toText = driver.findElement(submission_text).getText();
+        assertTrue(toText.contains(input_text));
 
-    String actualString = driver.findElement(By.xpath("//h1[@class='ddm-form-name']")).getText();
+    }
 
-
+    public void SubmissionDescription (String input_description)
+        //captures the description of Submission
+        //asserting if the description = parameter (input_description)
+        //optional message also added before the condition
+    {
+        String toText = driver.findElement(submission_description).getText();
+        assertTrue("Description contains: Information sent successfully!", toText.contains(input_description));
+    }
 }
-}
+

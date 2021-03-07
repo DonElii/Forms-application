@@ -1,5 +1,5 @@
 /*
- * This test case verifies the submitting of UserCreation page if the Birthdate is valid.
+ * This test case verifies the submitting of UserCreation page by End to End workflow.
  * @author: Zoltán Liptai (example ID: ABC123)
  * @ide: IntelliJ IDEA v2020.2.3
  * @framework: JUnit v4.13
@@ -27,7 +27,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class UserCreation_ValidBirthdate {
+public class UserCreation_E2E {
 
     WebDriver driver;
     Map<String, Object> vars;
@@ -49,7 +49,7 @@ public class UserCreation_ValidBirthdate {
         driver.quit();
     }
     @Test
-    public void UserCreation_ValidBirthdate_test() throws InterruptedException {
+    public void UserCreation_E2E_test() throws InterruptedException {
 
         //navigate to the URL
         driver.get("https://forms.liferay.com/web/forms/shared/-/form/122548");
