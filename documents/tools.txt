@@ -1,0 +1,22 @@
+@testing tool: Selenium-java-4.0.0-alpha-7
+@ide: IntelliJ IDEA v2020.2.3 /optional: Eclipse v2020-06 (4.16.0)
+@framework: JUnit v4.13
+
+GutHub repo for the project:
+https://github.com/DonElii/Forms-application
+
+Links
+-Selenium
+https://www.selenium.dev/downloads/
+
+-JUnit:
+https://github.com/junit-team/junit4/wiki/Download-and-Install
+
+or JUnit via Maven:
+
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.13</version>
+  <scope>test</scope>
+</dependency>

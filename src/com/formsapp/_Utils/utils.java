@@ -1,6 +1,6 @@
 /*
  * This class stores all the frequently repeated methods for test cases
- * @date calculation: today, tomorrow @date formatting to MM/DD/YYYY
+ * @date calculation: today, tomorrow & formatting to format: MM/DD/YYYY
  *
  */
 
@@ -9,11 +9,12 @@ package com.formsapp._Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.openqa.selenium.WebElement;
+import java.text.DateFormat;
 import static org.junit.Assert.assertTrue;
 
 

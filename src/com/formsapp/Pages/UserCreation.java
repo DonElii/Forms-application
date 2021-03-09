@@ -9,11 +9,12 @@ package com.formsapp.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import static org.junit.Assert.assertTrue;
 
 
 public class UserCreation
@@ -43,7 +44,7 @@ public class UserCreation
         //WebDriverWait wait = new WebDriverWait(driver, 5);
         //wait.until(ExpectedConditions.titleIs("This is a Liferay Forms"));
         String title = driver.getTitle();
-        assertTrue("Title is: This is a Liferay Forms",(title == "This is a Liferay Forms"));
+        assertTrue("Title should be: 'This is a Liferay Forms'", (driver.getTitle().contains("This is a Liferay Forms")));
 
     }
 
@@ -82,21 +83,22 @@ public class UserCreation
 
 
     //Fill the form one by one via below classes:
-
     public void typeUserName(String uid)
     {
         driver.findElement(username).sendKeys(uid);
     }
 
 
-    public void typeDate(String bdate)
+/*  public void typeDate(String bdate)
     //auto adjusting to the beginning of date calculation field.
+    //not in use. currently used class: utils/todayDate();
+
     {
         driver.findElement(birthdate).click();
         driver.findElement(birthdate).sendKeys(Keys.HOME);
         driver.findElement(birthdate).sendKeys(bdate);
     }
-
+*/
 
     public void typeComment(String comm)
     {
